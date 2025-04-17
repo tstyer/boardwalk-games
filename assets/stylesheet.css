@@ -27,6 +27,17 @@ h1, h2, h3 {
     color: var(--highlight);
 }
 
+/* narvbar */
+
+#navbar {
+    background-color: var(--primary-color);
+
+}
+
+#navbar .logo {
+    width: 40px;
+}
+
 /* grid visualisation CSS for testing */
 
 /* .container, .row {
