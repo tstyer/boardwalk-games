@@ -85,3 +85,35 @@ h2 {
 
 
 
+/* media queries */ = /* always go at bottom of css file */
+
+@media screen and (min-width: 768px) {
+    /* make all service cards the same heighfor consistency */
+    #services .card-body {
+        min-height: 191px;
+    }
+    /* used dev tools in window to find the right pixel amount for above */
+}
+
+/* for large devices - small laptops and up */
+/* set min-height to auto ascard text is the same heigh in all cards for large screens */
+@media screen and (min-width: 992px) {
+    /* make all service cards the same heighfor consistency */
+    #services .card-body {
+        min-height: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* make all service cards the same heighfor consistency */
+    #services .card-body {
+        min-height: 220px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    /* make all service cards the same heighfor consistency */
+    #services .card-body {
+        min-height: 195px;
+    }
+}
