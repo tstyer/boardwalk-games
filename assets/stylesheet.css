@@ -22,10 +22,16 @@ body {
 
 h1, h2, h3 {
     font-family: var(--secondary-font);
-    color: var(--primary-color);
+    color: var(--primary-color); 
+}
+
+h1, h2 {
     text-transform: uppercase;
 }
 
+h2 {
+    margin-bottom: 2rem;
+}
 
 
 .sub-heading-color {
@@ -52,6 +58,18 @@ h1, h2, h3 {
 #header .lead {
     font-family: var(--secondary-font);
 
+}
+
+/* services section */
+
+#services .card-footer {
+    font-weight: bold;
+    color: var(--highlight);
+    background-color: transparent;
+}
+
+#services .card {
+    margin-bottom: 1.5rem;
 }
 
 /* grid visualisation CSS for testing */
