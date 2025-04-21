@@ -3,29 +3,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&display=swap');
 
 
-/* CSS variables */
-
+/* CSS Variables */
 :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Macondo", cursive;
-    --primary-color: #416a8e; /* Blue */
-    --secondary-color: #aa9581;
-    --highlight: #416a8e;
-    --light-highlight: #7a9fc2;
+    --primary-color: #3a2620; /* dark brown */
+    --secondary-color: #aa9581; /* light brown */
+    --highlight-color: #416a8e; /* blue */
+    --highlight-color-light: #7a9fc2; /* light blue */
 }
 
-/* global styles */
+/* Global styles */
 
 body {
     font-family: var(--primary-font);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--secondary-font);
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }
 
-h1, h2 {
+h1,
+h2 {
     text-transform: uppercase;
 }
 
@@ -33,38 +35,61 @@ h2 {
     margin-bottom: 2rem;
 }
 
-
 .sub-heading-color {
-    color: var(--highlight);
+    color: var(--highlight-color);
 }
 
 .section {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-/* narvbar */
+/* Buttons */
+
+.custom-button-filled {
+    border: 2px solid var(--highlight-color);
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+.custom-button-filled:hover {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.custom-button-outline {
+    border: 3px solid var(--highlight-color);
+    padding: 7px 25px;
+    color: var(--highlight-color)
+}
+
+.custom-button-outline:hover {
+    background-color: var(--highlight-color);
+    color: white
+}
+
+/* Navbar */
 
 #navbar {
     background-color: var(--primary-color);
-
 }
 
 #navbar .logo {
     width: 30px;
 }
 
-/* header */
+/* Header */
 
 #header .lead {
     font-family: var(--secondary-font);
-
 }
 
-/* services section */
+/* Services */
 
 #services .card-footer {
     font-weight: bold;
-    color: var(--highlight);
+    color: var(--highlight-color);
     background-color: transparent;
 }
 
@@ -72,6 +97,26 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
+/* Events */
+
+#events .table {
+    /* events table font size small enough that 
+      the table doesn't overflow on xs screens. 
+      Size set back to 1rem in a media query 
+      for sm screens and up */
+    font-size: 0.7rem;
+}
+
+.student-discount {
+    background-color: var(--highlight-color);
+    font-weight: bold;
+    color: white;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
 /* Game library cards */
 
 #new-games .card,
@@ -79,13 +124,12 @@ h2 {
     border: none;
 }
 
-/* footer section */
+/* Footer / contact */
 
-#conact {
+#contact {
     background-color: var(--primary-color);
     color: white;
     padding-bottom: 3rem;
-
 }
 
 #contact h2 {
@@ -93,7 +137,7 @@ h2 {
 }
 
 #contact .sub-heading-color {
-    color: var(--light-highlight);
+    color: var(--highlight-color-light);
 }
 
 #contact i {
@@ -103,7 +147,7 @@ h2 {
 }
 
 #contact .social-links i {
-    color: var(--highlight);
+    color: var(--highlight-color-light);
     font-size: 1.9rem;
     transition: color 0.3s ease-in-out;
 }
@@ -118,47 +162,57 @@ h2 {
 
 /* grid visualisation CSS for testing */
 
-/* .container, .row {
-    border: 2px, solid, black;
+/* .container,
+.row {
+    border: 2px solid black;
 }
 
 .col-12 {
-    border: 2px, solid, white;
+    border: 2px solid white;
     background-color: lightgray;
 } */
 
+/* Media queries */
 
+/* Small screens and up */
+@media screen and (min-width: 576px) {
+    /* increase font size in events table when screen size is large enough */
+    #events .table {
+        font-size: 1rem;
+    }
+    .student-discount {
+        font-size: 1rem;
+    }
+}
 
-/* media queries */ = /* always go at bottom of css file */
-
+/* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-    /* make all service cards the same heighfor consistency */
+    /* Make all service cards the same height for consistency */
     #services .card-body {
         min-height: 191px;
     }
-    /* used dev tools in window to find the right pixel amount for above */
 }
 
-/* for large devices - small laptops and up */
-/* set min-height to auto ascard text is the same heigh in all cards for large screens */
+/* Large devices (small laptops, 992px and up) */
 @media screen and (min-width: 992px) {
-    /* make all service cards the same heighfor consistency */
+    /* Make all service cards the same height for consistency */
     #services .card-body {
         min-height: auto;
     }
 }
 
+/* xl devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
-    /* make all service cards the same heighfor consistency */
+    /* make all service cards the same height for consistency */
     #services .card-body {
         min-height: 220px;
     }
 }
 
+/* xxl devices (larger desktops, 1400px and up) */
 @media screen and (min-width: 1400px) {
-    /* make all service cards the same heighfor consistency */
+    /* make all service cards the same height for consistency */
     #services .card-body {
         min-height: 195px;
     }
 }
-
